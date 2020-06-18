@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var nums = [10,20,30,40,50]
+	
+	/* 
+		0번째 변수 : 10
+		...
+		4번째 변수 : 50
+	*/
+	
+	
+	//1
+	for(var index in nums){
+		document.write(index + "번째 변수 : " + nums[index] + "<br>")
+	}
+	document.write("<hr>")
+	
+	//2
+	for(var i = 0 ; i < nums.length; i++){
+		document.write(i + "번째 변수 : " + nums[i] + "<br>")
+	}
+	document.write("<hr>")
+	
+	//3
+	nums.forEach(function(element, index, nums){
+		document.write(`${element} : ${index}번째 정수<br>`)
+	})
+	
+	var copyNums = [...nums]
+	document.write(copyNums + "<br>")
+	
+	//깊은 복사 할때 100씩 더해서 복사. map : nums의 요소 개수만큼 for문 돔
+	var copyNums100 = nums.map(function(element){
+		return element + 100
+	}) 
+	document.write(copyNums100)
+	
+/* 	
+	let bool = true
+	for(let data of nums ){
+		if(data % 10 != 0){
+			bool = false
+			break
+		}
+	}
+	 */
+
+	 //모든 조건이 맞냐? every. 모든 조건을 만족해야 true
+	 let bool = nums.every(function(element, index, nums){
+		 return element % 10 == 0
+	 })
+	 
+	 document.write("every() 결과 : " + bool + "<br>")
+	 
+	 
+	 //하나라도 만족하면 true : some
+	 bool = nums.some(function(element, index, nums){
+		 return element % 10 != 0
+	 })
+	 
+	 
+	 //reduce : 결과적으로 하나의 값만 필요할때? 합
+	 let s = 0;
+	 for(let data of nums){
+		 s += data
+	 }
+	 
+	 var sum = nums.reduce(function(before, element, index){
+			return before + element
+	 })
+	 document.write("배열의 총합 : " + sum)
+	 
+</script>
+</head>
+<body>
+
+</body>
+</html>

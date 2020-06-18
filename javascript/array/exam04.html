@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var state = new Array()
+	
+//	stata[0] = "서울"
+//	state[1] = "대구"
+	state["서초"] = "서울"
+	state["철산"] = "경기"
+	state["해운대"] = "부산"
+	
+	for(var index in state){
+		document.write(index + ":" + state[index] + "<br>")
+	}
+	
+	var person = new Array();
+	person["name"] = "홍길동"
+	person["phone"] = "010-1111-2222"
+	person["addr"] = "서울 서초구"
+	person.gender  = "M"  //이렇게도~
+	
+	for(var key in person){
+		document.write(key + " : " + person[key] + "<br>")
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>
