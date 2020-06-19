@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//자바스크립트가 body내용에 뭐가 들었는지 알려면, 이미 body의 내용이 onload 되어야함 -> 자바스크립트 코드를 onload함수에 써야함!
+	
+	console.log(document.body)		// null -> document.body 아직 실행 안됐으므로 null
+	window.onload = function(){
+		console.log(document.body)  // 값 나옴 -> body로 가서 시행하므로...
+		alert("innerHTML : " + document.body.innerHTML)  //innerHTML -> body 안의 값 보여줌. 
+		alert("innerText : " + document.body.innerText)  //innerText -> 태그를 때고 실제 글자들만 보여줌.
+		
+		let tags = ""
+		tags += "<ul>"
+		tags += "<li>red</li>"
+		tags += "<li>orange</li>"
+		tags += "<li>blue</li>"
+		tags += "</ul>"
+		
+	//	document.body.innerHTML = tags		//<body>안의 값을 tags로 바꾸겠다!! 원래 있던거는 사라짐.
+	//	document.write(tags)
+	//	document.body.innerText = tags		//태그 없앤 그냥 글자로 인식..
+	//	document.body.innerHTML = document.body.innerHTML + tags	//원래 있던 내용 뒤에 붙이기
+	    document.body.innerHTML += "<br>"
+	    document.body.innerHTML += tags
+	    
+	}
+
+</script>
+</head>
+<body>
+	hello<br>
+	<h1>Hi~~</h1>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function clickTimer(){
+		setTimeout(function(){
+			alert("3초 지났습니다.")
+		}, 3000)
+	}
+	
+	window.onload = function(){
+		let btn = document.getElementById("clickBtn")
+		
+		//고전적 이벤트 발생
+		btn.onclick = function(){
+			alert("click btn...")
+		}
+		
+
+				
+		var tag = document.createElement("h1")
+		var tagText = document.createTextNode("클릭해보세요!!!")
+		tag.style.color = "red"
+		tag.style.backgroundColor = "orange"
+		
+		tag.appendChild(tagText)
+		document.body.appendChild(tag)
+		
+		tag.onclick = function(){
+			alert("h1 click...")
+		}
+		
+	}
+</script>
+</head>
+<body>
+	<input type = "button" value = "클릭해봐ㅎ" onclick = "alert('ckick...인라인 방식 이벤트 발생')">
+	<input type = "button" value = "3초 타이머" onclick = "clickTimer()">
+	<input type = "button" value = "클릭2" id = "clickBtn">
+</body>
+</html>

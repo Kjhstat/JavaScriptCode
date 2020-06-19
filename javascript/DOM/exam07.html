@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//이벤트 처리?
+	window.onload = function(){
+		var span = document.querySelector("span") //span 태그 가져오기
+		span.onclick = function(e){
+			alert("click span...")
+			console.log(e)		//클릭한 위치 나옴.. MouseEvent. 이 파라미터는 사실 숨겨져있음.
+		}
+		
+		var h1 = document.querySelector("h1")
+		h1.onclick = function(e){  //click했을때 이벤트를 기억하는 변수이름을 e로 설정해줌
+			alert("click h1...")
+			e.cancelBubble = true  // 더이상 event bubbling 발생 x
+		}
+		
+		var div = document.querySelector("div")
+		div.onclick = function(){
+			alert("click div...")
+		}
+		//event bubbling : 하위 onclick 이벤트가 시행되면 부모를 타고들어가면서 이벤트를 실행해 주는 것. click span -> click h1 -> click div 실행됨...
+		
+	}
+</script>
+</head>
+<body>
+	<div>
+		<h1>
+			<span>Hello</span>
+		</h1>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	let audio = new Audio()  //내장 객체
+	audio.src = "../../html/playlist/Kalimba.mp3"
+	audio.play() //오디오 실행하는 내장 함수
+		
+	function play(){
+		alert("click...")
+	}
+</script>
+</head>
+<body>
+
+	<input type = "button" value = "ALERT" onclick="play()"> <!-- onclick : 왼쪽 마우스로 클릭했을때! -->
+	<input type = "button" value = "PLAY" onclick="audio.play()">  <!-- 내장 함수로 오디오 플레이 -->
+	<input type = "button" value = "PAUSE onclick="audio.pause()"> <!-- 중지 -->
+	
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function(){
+		var tag = document.createElement("h1") 
+		var tagText = document.createTextNode("Hello bro~") 
+
+		
+		
+		tag.appendChild(tagText)
+		document.body.appendChild(tag) 
+		
+		var imgTag = document.createElement("img")
+		imgTag.src = "https://t1.daumcdn.net/daumtop_chanel/op/20170315064553027.png"
+		
+		
+		//그림 누르면 새창 띄우기 -> a 태그 추가
+		let aTag = document.createElement("a")
+		aTag.href = "http://www.daum.net"
+		aTag.setAttribute("target", "_blank") //이런식으로 속성을 .을 이용하지 않고 setAttribute로 줘도 됨
+	//  aTag.setAttreibut("href", "http://www.daum.net")
+		aTag.appendChild(imgTag)
+		document.body.appendChild(aTag)
+	}
+</script>
+</head>
+<body>
+ 	
+</body>
+</html>

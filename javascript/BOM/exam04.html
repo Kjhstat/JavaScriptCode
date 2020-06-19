@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function loadCall(){
+		alert("load완료...")
+	}
+	
+	//이렇게 해서 window 기본함수 onload에 함수 재정의 가능. 이때는 body에 onload 쓸필요 없음. 이것을 더 많이 씀
+	// html을 제어 하겠다! -> onload에 써야하는 것임!!!
+	window.onload = function(){
+		alert("load complete....")
+	}
+</script>
+</head>
+<body onload="loadCall()">	<!-- script보다 body의 모든 태그가 로드됨. onload 뒤에 자바스크립트 문법 쓸 수 있음 -->
+	<h1>Hello</h1>
+	<img src="https://t1.daumcdn.net/daumtop_chanel/op/20170315064553027.png"><br>
+	<img src="https://t1.daumcdn.net/daumtop_chanel/op/20170315064553027.png"><br>
+	<img src="https://t1.daumcdn.net/daumtop_chanel/op/20170315064553027.png"><br>
+	<img src="https://t1.daumcdn.net/daumtop_chanel/op/20170315064553027.png"><br>
+</body>
+</html>

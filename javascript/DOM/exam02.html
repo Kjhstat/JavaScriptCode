@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//'ID'를 '아이디'로 바꾸기 -> body의 id나 class 되어 있는거 가져오기 -> document.getElementById()
+	window.onload = function(){
+		var id = document.getElementById("id")
+		id.innerHTML = "아이디"
+	}
+	
+</script>
+</head>
+<body>
+	<table border = "1" style = "width:100px, height : 100px">
+		<tr>
+			<td id="id">ID</td>
+		</tr>
+		<tr>
+			<td>PASSWORD</td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	if(confirm("네이버로 이동하시겠습니까?")){ //confirm은 확인/취소 이므로...
+		
+		location.href = "http://www.naver.com"   //기본은 내가 만든 창. 이 값을 confirm(확인)일때 위치를 변경해줌
+	//	location = "http://www.naver.com"  이렇게만 해줘도 됨
+	//	location.assign("http://www.nvaer.com") 이것도 가능
+	}
+	
+</script>
+</head>
+<body>
+	<!-- script가 먼저 실행되므로 Hello가 출력 안됨. onload 속성으로 가능 : body가 가장 먼저 실행되게 함! -->
+	<h1>Hello</h1>
+
+</body>
+</html>
