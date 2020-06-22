@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	/* 
+		JSON.stringify() : 객체를 자바스크립트 문자로 바꿔주는 함수
+		JSON.parse()     : 자바스크립트 문자열을 객체로 바꿔줌
+	*/
+	
+	let person = {
+			"name" : "HONG",
+			"phone" : "010-1111-2222",	
+			"addr" : "soul",
+			toJSON : function(){	//정의한 변수 리턴하기. JSON형태로 넘겨서 백엔드에 저장. ex) 댓글 입력받았으면 이것을 저장시키기 위해서 JSON으로 넘김!
+				return{
+					"name" : this.name,
+					"phone" : this.phone
+				}
+			}
+	}
+	console.log(person)
+	console.log(JSON.stringify(person), typeof JSON.stringify(person))	
+	let strPerson = JSON.stringify(person)
+
+	let obj = JSON.parse(strPerson)
+	console.log(obj, typeof obj)
+	document.write("name : " + obj.name + "<br>")
+	document.write("phone : " + obj.phone + "<br>")
+	
+	
+	// 자바에서 객체 넘겨줄때 toString 함수 변형시켜서 문자열 넘겨주면, 여기서 JSON.parse로 객체로 만들어 주면 됨.
+	// 사실 JSON으로 만들어 주는 라이브러리 있음.
+	
+	let str = '{"id" : "hong", "password" : "1234"}'
+	let obj2 = JSON.parse(str)
+	document.write("<hr>")
+	document.write("id : " + obj2.id + "<br>pwd : " + obj.password + "<br>")
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

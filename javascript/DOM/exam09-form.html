@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	// 필수적으로 어떤 데이터를 입력받아야하는 경우, 서버에 보내지 않고도 자바스트립트에서 이를 체크할 수 있음.
+	// 누군가가 게시판을 만들었는데, 제목을 작성하지 않았을 경우, 이를 제어하는 것은 자바스트립트에서 하는 역할
+	
+	//인라인 이벤트발생 경우
+	function showInfo(){
+		/*
+		document.getElementsById("input[type = 'checkbox']")[0] //체크되었으면 true, 아니면 false
+		document.getElementsById("input[type = 'checkbox']")[1] //너무 불편... -> form태그는 name으로 접근 가능!! form태그만 유일!
+		*/
+		
+		let list = "";
+		let hobbys = document.inputForm.hobby //form name이 inputForm 아래의 name이 hobby인 애들 가져올 수 있음.
+		for(let i = 0; i < hobbys.length; i++){
+			if(hobbys[i].checked)	// checked 된것은 true.
+			list += document.inputForm.hobby[i].value + "\n"	//check 된 것의 value 값 추가
+		}
+		alert(list)
+	}
+	
+	function selectAll(check){
+		for(let i in document.inputForm.hobby){
+			document.inputForm.hobby[i].checked = check
+		}
+	}
+	
+	function toggle(){
+		let hobbys = document.inputForm.hobby
+		
+		let check = false
+		for(let i = 0; i < hobbys.length; i++){
+			//하나라도 false이면 check를 true로 바꿈
+			if(!hobbys[i].checked){
+				check = true
+			}
+		}
+		for(let i in hobbys){
+			hobbys[i].checked = check
+		}
+		
+	}
+	
+</script>
+</head>
+<body>
+	<form action = "" name = "inputForm">
+		당신의 취미는? <br>
+		<input type = "checkbox" name = "hobby" value = "music"> 음악 감상<br> <!-- name 속성 : 같은 그룹임을 알려줌 -->
+		<input type = "checkbox" name = "hobby"  value = "movie"> 영화 감상<br>
+		<input type = "checkbox" name = "hobby" value = "climb"> 등산<br>
+		<input type = "checkbox" name = "hobby" value = "game"> 게임<br>
+		<!-- 전체 선택, 취소 -->
+		<input type = "button" value = "전체선택" onclick = "selectAll(true)">
+		<input type = "button" value = "전체취소" onclick = "selectAll(false)">
+		
+		<!-- 하나의 버튼으로 제어하기 -->
+		<input type = "button" value = "전체 선택/해제" onclick = "toggle()">
+		
+		<input type = "button" value = "결과보기" onclick = "showInfo()">
+	</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

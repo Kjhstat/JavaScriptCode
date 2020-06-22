@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+	function showInfo(){
+		let hobbys = document.inputform.hobby
+		let list = ""
+		
+		for(let i = 0; i < hobbys.length; i++){
+			if(hobbys[i].checked == true){
+				list += hobbys[i].value + "\n"
+			}
+		}
+		alert(list)
+	}
+	
+	function selectAll(check){
+		
+		for(let i = 0; i < document.inputform.hobby.length; i++){
+			document.inputform.hobby[i].checked = check
+		}
+	}
+	
+	function toggle(){
+		let check = false
+		let hobbys = document.inputform.hobby
+		
+		for(let i = 0; i < hobbys.length; i++){
+			if(hobbys[i].checked == false){
+				check = true
+				break
+			}
+		}
+		
+		for(let i = 0; i < hobbys.length; i++){
+			hobbys[i].checked = check
+		}
+	}
+	
+</script>
+
+
+</head>
+<body>
+
+	<form action = "" name = "inputform">
+		취미를 선택하시오 <br>
+		<input type = "checkbox" name = "hobby" value = "축구">축구<br>
+		<input type = "checkbox" name = "hobby" value = "농구">농구<br>
+		<input type = "checkbox" name = "hobby" value = "그림">그림 <br>
+		<input type = "checkbox" name = "hobby" value = "달리기">달리기 <br>
+		
+		<input type = "button" value = "결과보기" onclick = "showInfo()">
+		<input type = "button" value = "전체선택" onclick = "selectAll(true)" >
+		<input type = "button" value = "전체취소" onclick = "selectAll(false)" >
+		<input type = "button" value = "전체선택/취소" onclick = "toggle()" >
+	</form>
+	
+</body>
+</html>
